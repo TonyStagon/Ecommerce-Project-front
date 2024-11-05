@@ -1,0 +1,192 @@
+/* ProductDetail.css */
+
+.product-detail-container {
+    max-width: 600px;
+    /* Limit the width of the detail page */
+    margin: 20px auto;
+    /* Center the container */
+    padding: 30px;
+    /* Increased padding for a spacious feel */
+    border-radius: 12px;
+    /* More pronounced rounded corners */
+    background-color: #f9f9f9;
+    /* Soft gray background for elegance */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    /* Deeper shadow for depth */
+}
+
+.product-detail-image {
+    width: 100%;
+    /* Make the image responsive */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 8px;
+    /* Rounded corners for the image */
+    margin-bottom: 20px;
+    /* Space below the image */
+    border: 1px solid #ddd;
+    /* Light border around the image */
+}
+
+h2 {
+    font-size: 28px;
+    /* Larger font size for the product name */
+    color: #222;
+    /* Darker color for a premium feel */
+    margin-bottom: 15px;
+    /* Space below the heading */
+    font-family: 'Helvetica Neue', sans-serif;
+    /* Modern font */
+}
+
+p {
+    font-size: 18px;
+    /* Standard font size for text */
+    color: #555;
+    /* Medium gray color for text */
+    line-height: 1.6;
+    /* Better line spacing */
+}
+
+
+/* Styles for the price */
+
+p.price {
+    font-weight: 700;
+    /* Bold font for the price */
+    font-size: 24px;
+    /* Slightly larger font for the price */
+    color: #d351d3;
+    /* Orange color for the price */
+    margin: 15px 0;
+    /* Margin for spacing */
+}
+
+
+/* Button Styles */
+
+.button-container {
+    display: flex;
+    /* Flexbox for button alignment */
+    gap: 20px;
+    /* Space between buttons */
+    margin-top: 20px;
+    /* Space above buttons */
+}
+
+.button {
+    background-color: #d834a7bb;
+    ;
+    /* Orange background */
+    color: #fff;
+    /* White text */
+    border: none;
+    /* Remove default border */
+    border-radius: 30px;
+    /* Rounded edges */
+    padding: 12px 24px;
+    /* Spacing inside the button */
+    font-size: 16px;
+    /* Font size */
+    font-weight: bold;
+    /* Bold text */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Smooth transitions */
+}
+
+.button:hover {
+    background-color: #460646c2;
+    /* Darker orange on hover */
+    transform: translateY(-2px);
+    /* Lift effect on hover */
+}
+
+.button:active {
+    transform: translateY(1px);
+    /* Slight press effect */
+}
+
+
+/* Additional styles for the cart slide panel */
+
+
+/* Make the cart slide scrollable */
+
+.cart-slide {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #f9f9f9;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+.close-cart-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #333;
+    /* Adjust color to match the design */
+    cursor: pointer;
+}
+
+.cart-items-container {
+    max-height: calc(100% - 150px);
+    /* Ensures the footer remains visible */
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cart-item-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.remove-button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cart-footer {
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-price {
+    font-weight: bold;
+    font-size: 18px;
+}

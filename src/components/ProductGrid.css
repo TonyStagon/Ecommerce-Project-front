@@ -1,0 +1,53 @@
+/* ProductGrid.css */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-images {
+    display: flex;
+    justify-content: center;
+    /* Center the image horizontally */
+    margin: 10px 0;
+}
+
+.single-product-image {
+    width: 100%;
+    /* Set desired width */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+
+/* ProductGrid.css */
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}

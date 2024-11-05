@@ -1,0 +1,45 @@
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
+    /* Space between product cards */
+}
+
+.product-card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    /* Ensures that images do not overflow the card */
+}
+
+.images-container {
+    height: 200px;
+    /* Set a height for the image container */
+    overflow: hidden;
+    /* Ensures the image is contained */
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the container */
+    transition: transform 0.2s ease;
+    /* Smooth transition effect */
+}
+
+.product-image:hover {
+    transform: scale(1.1);
+    /* Slightly enlarge the image on hover */
+}
+
+
+/* Positioning text over the image */
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+}
