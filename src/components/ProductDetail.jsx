@@ -1,11 +1,13 @@
+// ProductDetail.js
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [product, setProduct] = useState(null);
     const [cartVisible, setCartVisible] = useState(false);
     const [cart, setCart] = useState([]);
@@ -116,7 +118,7 @@ const ProductDetail = () => {
                     </div>
                     <div className="cart-footer">
                         <p className="total-price">Total Price: R{getTotalPrice()}</p>
-                        <button className="view-cart-button">View Cart</button>
+                        <button className="view-cart-button" onClick={() => navigate('/cart')}>View Cart</button>
                         <button className="checkout-button">Checkout</button>
                     </div>
                 </div>
