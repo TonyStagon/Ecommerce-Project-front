@@ -1,4 +1,4 @@
-// frontend/src/firebase.js
+// frontend/src/firebaseConfig.jsx
 
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
