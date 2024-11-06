@@ -1,12 +1,11 @@
 .products-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    /* 3 columns */
     gap: 9px;
-    /* Space between product cards */
 }
 
 .product-card {
-    position: relative;
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -16,10 +15,12 @@
 }
 
 .images-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Center the images vertically */
     height: 200px;
     /* Set a height for the image container */
-    overflow: hidden;
-    /* Ensures the image is contained */
 }
 
 .product-image {
@@ -36,10 +37,9 @@
     /* Slightly enlarge the image on hover */
 }
 
-
-/* Positioning text over the image */
-
 .footer {
     margin-top: 20px;
+    /* Add some spacing above the footer */
     text-align: center;
+    /* Center align the footer text */
 }
