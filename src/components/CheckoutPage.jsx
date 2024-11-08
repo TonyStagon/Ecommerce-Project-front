@@ -1,9 +1,13 @@
 // frontend/src/components/CheckoutPage.jsx
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import './CheckoutPage.css';
 
 const CheckoutPage = () => {
+    const location = useLocation();
+    const totalPrice = location.state?.totalPrice || 0;
+
     const [deliveryInfo, setDeliveryInfo] = useState({
         fullName: '',
         address: '',
@@ -22,7 +26,6 @@ const CheckoutPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // You can handle form submission for delivery details here.
         console.log("Delivery Information Submitted: ", deliveryInfo);
     };
 
@@ -42,7 +45,6 @@ const CheckoutPage = () => {
 
             <div className="payment-method">
                 <h3>Payment Method</h3>
-                {/* Wrap PayPalButtons with PayPalScriptProvider and add client ID */}
                 <PayPalScriptProvider options={{ "client-id": "AWfif6efyAwZ2bndKS2bigPPziJ_-bda7qnmrpk1peFeXyKPN5hVwVE1dQ8lTekBjTRjJO5lp4046qlR" }}>
                     <PayPalButtons
                         style={{ layout: 'vertical' }}
@@ -50,7 +52,7 @@ const CheckoutPage = () => {
                             return actions.order.create({
                                 purchase_units: [{
                                     amount: {
-                                        value: "100.00", // Replace with the actual total amount
+                                        value: totalPrice,
                                     },
                                 }],
                             });

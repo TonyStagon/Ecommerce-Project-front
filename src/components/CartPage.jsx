@@ -1,12 +1,14 @@
 // frontend/src/components/CartPage.js
-
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import { useNavigate } from 'react-router-dom';
 import './CartPage.css';
 
 const CartPage = () => {
     const [cart, setCart] = useState([]);
-    const navigate = useNavigate(); // Initialize navigation
+    const navigate = useNavigate();
+
+    // Conversion rate from Rands to USD
+    const conversionRate = 0.07;
 
     useEffect(() => {
         const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -35,8 +37,13 @@ const CartPage = () => {
         return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
     };
 
+    const getTotalPriceInDollars = () => {
+        const totalInRands = parseFloat(getTotalPrice());
+        return (totalInRands * conversionRate).toFixed(2);
+    };
+
     const handleCheckout = () => {
-        navigate('/checkout'); // Navigate to checkout page on button click
+        navigate('/checkout', { state: { totalPrice: getTotalPriceInDollars() } });
     };
 
     return (
@@ -76,7 +83,8 @@ const CartPage = () => {
                 </tbody>
             </table>
             <div className="cart-summary">
-                <p>Total Price: R{getTotalPrice()}</p>
+                <p>Total Price in Rands: R{getTotalPrice()}</p>
+                <p>Total Price in USD: ${getTotalPriceInDollars()}</p>
                 <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
             </div>
         </div>

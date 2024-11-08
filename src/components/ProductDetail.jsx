@@ -76,6 +76,10 @@ const ProductDetail = () => {
         return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
     };
 
+    const handleCheckout = () => {
+        navigate('/checkout', { state: { totalPrice: getTotalPrice() } });
+    };
+
     if (!product) {
         return <div>Loading...</div>;
     }
@@ -119,7 +123,7 @@ const ProductDetail = () => {
                     <div className="cart-footer">
                         <p className="total-price">Total Price: R{getTotalPrice()}</p>
                         <button className="view-cart-button" onClick={() => navigate('/cart')}>View Cart</button>
-                        <button className="checkout-button">Checkout</button>
+                        <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
                     </div>
                 </div>
             )}
