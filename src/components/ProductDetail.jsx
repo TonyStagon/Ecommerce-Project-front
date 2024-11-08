@@ -80,6 +80,10 @@ const ProductDetail = () => {
         navigate('/checkout', { state: { totalPrice: getTotalPrice() } });
     };
 
+    const handleBuyNow = () => {
+        navigate('/checkout', { state: { product: { ...product, quantity: 1 }, totalPrice: product.price } });
+    };
+
     if (!product) {
         return <div>Loading...</div>;
     }
@@ -95,7 +99,7 @@ const ProductDetail = () => {
 
             <div className="button-container">
                 <button className="button" onClick={handleAddToCart}>Add to Cart</button>
-                <button className="button">Buy it Now</button>
+                <button className="button" onClick={handleBuyNow}>Buy it Now</button>
             </div>
 
             {cartVisible && (

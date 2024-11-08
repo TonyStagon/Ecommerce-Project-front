@@ -1,4 +1,5 @@
-// frontend/src/components/CheckoutPage.jsx
+// CheckoutPage.jsx
+
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
@@ -6,7 +7,8 @@ import './CheckoutPage.css';
 
 const CheckoutPage = () => {
     const location = useLocation();
-    const totalPrice = location.state?.totalPrice || 0;
+    const product = location.state?.product;
+    const totalPrice = product ? product.price : location.state?.totalPrice || 0;
 
     const [deliveryInfo, setDeliveryInfo] = useState({
         fullName: '',
@@ -32,6 +34,13 @@ const CheckoutPage = () => {
     return (
         <div className="checkout-page-container">
             <h2>Checkout</h2>
+
+            {product && (
+                <div className="product-summary">
+                    <h3>{product.name}</h3>
+                    <p>Price: R{product.price}</p>
+                </div>
+            )}
 
             <form className="delivery-form" onSubmit={handleSubmit}>
                 <h3>Delivery Information</h3>
