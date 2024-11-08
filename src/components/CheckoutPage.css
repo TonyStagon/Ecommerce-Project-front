@@ -1,0 +1,41 @@
+/* src/components/CheckoutPage.css */
+
+.checkout-page-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-page-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.delivery-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.delivery-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: #555;
+}
+
+.delivery-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.payment-section {
+    margin-top: 30px;
+    text-align: center;
+}

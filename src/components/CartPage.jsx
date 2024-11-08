@@ -1,11 +1,14 @@
+// frontend/src/components/CartPage.js
+
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './CartPage.css';
 
 const CartPage = () => {
     const [cart, setCart] = useState([]);
+    const navigate = useNavigate(); // Initialize navigation
 
     useEffect(() => {
-        // Load cart from local storage when component mounts
         const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
         setCart(storedCart);
     }, []);
@@ -30,6 +33,10 @@ const CartPage = () => {
 
     const getTotalPrice = () => {
         return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+    };
+
+    const handleCheckout = () => {
+        navigate('/checkout'); // Navigate to checkout page on button click
     };
 
     return (
@@ -70,7 +77,7 @@ const CartPage = () => {
             </table>
             <div className="cart-summary">
                 <p>Total Price: R{getTotalPrice()}</p>
-                <button className="checkout-button">Checkout</button>
+                <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
             </div>
         </div>
     );

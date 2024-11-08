@@ -7,7 +7,8 @@ import RegisterPage from './components/RegisterPage';
 import LoginPage from './components/LoginPage';
 import HomePage from './components/HomePage';
 import ProductListPage from './components/ProductListPage';
-import Cart from './components/CartPage';
+import CartPage from './components/CartPage';
+import CheckoutPage from './components/CheckoutPage'; // Import CheckoutPage
 import UserDashboard from './components/UserDashboard';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import ProductDetail from './components/ProductDetail';
@@ -44,7 +45,8 @@ const App = () => {
                 <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
                 <Route path="/products" element={<ProductListPage />} />
                 <Route path="/product/:id" element={<ProductDetail />} />
-                <Route path="/cart" element={<Cart />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="/checkout" element={<CheckoutPage />} /> {/* Add Checkout route */}
                 {isLoggedIn && <Route path="/dashboard" element={<UserDashboard />} />}
             </Routes>
         </Router>
