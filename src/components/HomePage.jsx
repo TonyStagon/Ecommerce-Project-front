@@ -66,7 +66,7 @@ const HomePage = () => {
                 </div>
             ))}
             <footer className="footer">
-                <p>All rights reserved by Arthur Maatalne ©2024</p>
+                <p>All rights reserved by Arthur Maatlane ©2024</p>
             </footer>
         </div>
     );

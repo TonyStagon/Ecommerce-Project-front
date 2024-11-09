@@ -79,7 +79,7 @@ const CartPage = () => {
                             </td>
                             <td>R{(item.price * item.quantity).toFixed(2)}</td>
                         </tr>
-                    ))}
+                    ))}  
                 </tbody>
             </table>
             <div className="cart-summary">

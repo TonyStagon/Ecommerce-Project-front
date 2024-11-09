@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebaseConfig'; // Ensure correct path to firebaseConfig
 import './CreateStore.css';
-
 const CreateStore = () => {
     const [productName, setProductName] = useState('');
     const [price, setPrice] = useState('');
