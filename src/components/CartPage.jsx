@@ -61,7 +61,7 @@ const CartPage = () => {
                     {cart.map((item) => (
                         <tr key={item.id} className="cart-item-row">
                             <td className="product-info">
-                                <img src={item.images[0]} alt={item.name} className="product-image" />
+                                <img src={item.images[0]} alt={item.name} className="product-images" />
                                 <div>
                                     <p>{item.name}</p>
                                     <p>R{item.price}</p>
