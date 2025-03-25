@@ -1,3 +1,6 @@
+
+commerce-project-front-dgxk.vercel.app
+
 Marketplace Project
 Welcome to the Marketplace Project, a robust, full-stack e-commerce platform tailored to deliver exceptional shopping experiences. This application is built using React and Firebase, integrating an optimized cart system, smooth transitions between product views, and a scalable architecture suitable for high-traffic marketplaces.
 
