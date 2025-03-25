@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
-import { Link } from 'react-router-dom'; // Import Link for navigation
+import { Link } from 'react-router-dom';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -18,10 +18,9 @@ const HomePage = () => {
                 }));
                 setProducts(productList);
 
-                // Initialize the hovered index for each product
                 const initialIndex = {};
                 productList.forEach((product) => {
-                    initialIndex[product.id] = 0; // Start with the first image
+                    initialIndex[product.id] = 0;
                 });
                 setHoveredIndex(initialIndex);
             } catch (error) {
@@ -42,7 +41,7 @@ const HomePage = () => {
     const handleMouseLeave = (productId) => {
         setHoveredIndex((prevIndex) => ({
             ...prevIndex,
-            [productId]: 0, // Reset to the first image when mouse leaves
+            [productId]: 0,
         }));
     };
 
@@ -50,7 +49,7 @@ const HomePage = () => {
         <div className="products-container">
             {products.map((product) => (
                 <div key={product.id} className="product-card">
-                    <Link to={`/product/${product.id}`}> {/* Link to the product detail page */}
+                    <Link to={`/product/${product.id}`}>
                         <div className="images-container">
                             {product.images && product.images.length > 0 && (
                                 <img
